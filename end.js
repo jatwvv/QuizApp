@@ -13,7 +13,7 @@ username.addEventListener("keyup", () => {
   saveScoreBtn.disabled = !username.value;
 });
 
-highScores = (e) => {
+saveHighScore = (e) => {
   e.preventDefault();
 
   const score = {
@@ -24,5 +24,5 @@ highScores = (e) => {
   highScores.sort((a, b) => b.score - a.score);
   highScores.splice(5);
   localStorage.setItem("highScores", JSON.stringify(highScores));
-  window.location.assign("/");
+  window.location.assign("index.html");
 };
